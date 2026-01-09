@@ -1,96 +1,99 @@
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>mYi介 的兴趣空间</title>
+  <meta name="color-scheme" content="dark light">
   <style>
-    body {
-      margin: 0; padding: 0; background: #0f172a; color: #e2e8f0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-    }
-    main { max-width: 920px; margin: 48px auto; padding: 0 16px; }
-    a { color: #93c5fd; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1, h2, h3, h4 { color: #f8fafc; margin: 24px 0 12px; }
-    ul { padding-left: 20px; }
-    footer { margin: 32px 0; color: #94a3b8; font-size: 14px; }
-    hr { border: none; border-top: 1px solid #334155; margin: 24px 0; }
+    :root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --link:#93c5fd; --border:#334155; --accent:#38bdf8; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+    .hero { padding:40px 16px; border-bottom:1px solid var(--border); background:#0b1220; }
+    .container { max-width:960px; margin:0 auto; }
+    h1 { margin:0 0 8px; font-size:34px; color:#f8fafc; }
+    .subtitle { color:var(--muted); font-size:16px; }
+    nav.tabs { display:flex; gap:12px; margin:16px 0; }
+    nav.tabs button { background:#0b1220; color:var(--fg); border:1px solid var(--border); padding:8px 14px; border-radius:8px; cursor:pointer; }
+    nav.tabs button.active { border-color:var(--accent); color:var(--accent); }
+    section { padding:24px 0; }
+    .panel { border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+    iframe { width:100%; height:70vh; border:0; background:#0b1220; }
+    .placeholder { padding:24px; background:#0b1220; }
+    .contact { margin-top:24px; font-size:15px; color:var(--muted); }
+    a { color:var(--link); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    footer { border-top:1px solid var(--border); padding:16px; text-align:center; color:var(--muted); }
   </style>
   <!-- Baidu Tongji（异步）—仅在正式域名加载 -->
-<script>
-  if (location.hostname === 'lixur2016sh-design.github.io') {
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1edaf27b950211ca2462fd11e7c7ef3a";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  }
-</script>
+  <script>
+    if (location.hostname === 'lixur2016sh-design.github.io') {
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1edaf27b950211ca2462fd11e7c7ef3a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    }
+  </script>
 </head>
 <body>
-  <main>
+  <header class="hero">
+    <div class="container">
+      <h1>mYi介 的兴趣空间</h1>
+      <div class="subtitle">Ai · 五万英尺</div>
+      <nav class="tabs" role="tablist" aria-label="副标题切换">
+        <button id="tab-ai" class="active" role="tab" aria-selected="true" aria-controls="panel-ai">Ai</button>
+        <button id="tab-alt" role="tab" aria-selected="false" aria-controls="panel-alt">五万英尺</button>
+      </nav>
+    </div>
+  </header>
 
-<h1>mYi介 的兴趣空间</h1>
-<h2>mYi介 的兴趣空间</h2>
+  <main class="container">
+    <!-- Panel: Ai（展示 share_ai.html 内容） -->
+    <section id="panel-ai" class="panel" role="tabpanel" aria-labelledby="tab-ai">
+      <iframe src="./share_ai.html" title="AI 分享（Markdown）"></iframe>
+    </section>
 
-<p>Ai · 五万英尺</p>
-<p><a href="#about">关于我</a> <a href="#interests">兴趣集</a> <a href="#gallery">相册</a> <a href="#posts">随笔</a> <a href="#contact">联系我</a></p>
-<h3>关于我</h3>
+    <!-- Panel: 五万英尺（占位符） -->
+    <section id="panel-alt" class="panel" role="tabpanel" aria-labelledby="tab-alt" hidden>
+      <div class="placeholder">
+        <h2 style="margin-top:0">五万英尺</h2>
+        <p>这里是一个占位符（Placeholder）。未来可以展示高层视角的内容，如愿景、路线图或年度主题。</p>
+      </div>
+    </section>
 
-<p>mYi介 头像</p>
-<p>你好，我是 mYi介，非典型工科男。这是我的兴趣空间，欢迎来逛。</p>
-<ul>
-<li>\#摄影</li>
-<li>\#指弹吉他</li>
-<li>\#徒步旅行</li>
-<li>\#电子DIY</li>
-</ul>
-<p>复制本站链接 <a href="#">微博</a> <a href="#">微信</a></p>
-<h3>兴趣集</h3>
-
-<p>摄影</p>
-<h4>摄影</h4>
-
-<p>城市人文与旅行风景，偏好 35mm 定焦的干净画面。</p>
-<p><a href="#">查看作品集</a> 音乐</p>
-<h4>音乐</h4>
-
-<p>指弹吉他与 Lo-fi，偶尔分享练习片段和曲谱。</p>
-<p><a href="#">试听清单</a> 旅行</p>
-<h4>旅行</h4>
-
-<p>轻徒步与城市漫游，偏好低人流的自然步道。</p>
-<p><a href="#">路线与攻略</a> 电子DIY</p>
-<h4>电子DIY</h4>
-
-<p>简易合成器与树莓派小项目，记录踩坑与心得。</p>
-<p><a href="#">项目集锦</a></p>
-<h3>相册</h3>
-
-<p>相册1 相册2 相册3 相册4 相册5</p>
-<h3>随笔</h3>
-<h4>给 2025 的一张照片</h4>
-
-<time datetime="2025-11-20">2025-11-20</time>
-<p>把一次清晨的光留在这里。或许照片不止记录，更是提醒。</p>
-<p><a href="#">阅读全文</a></p>
-<h4>一把木吉他的夏天</h4>
-
-<time datetime="2025-08-02">2025-08-02</time>
-<p>每次指尖划过琴弦，总能听见一点不完美，但刚好是生活的质感。</p>
-<p><a href="#">阅读全文</a></p>
-<h3>联系我</h3>
-<ul>
-<li>邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></li>
-<li>微博：<a href="#">@你的微博</a></li>
-<li>B站：<a href="#">我的空间</a></li>
-</ul>
-<p>© 2026 mYi介 · 本页由静态文件构成，可自由托管与分享</p>
-    <footer>© 2026 mYi介 · 本页由静态文件构成，可自由托管与分享</footer>
+    <!-- 联系我 -->
+    <section class="contact">
+      联系我：<a href="mailto:bruce.lee@zf.com">bruce.lee@zf.com</a>
+    </section>
   </main>
+
+  <footer>
+    © 2026 mYi介 · 由 GitHub Pages 托管
+  </footer>
+
+  <script>
+    // 简单的无依赖 Tab 切换
+    const tabAi = document.getElementById('tab-ai');
+    const tabAlt = document.getElementById('tab-alt');
+    const panelAi = document.getElementById('panel-ai');
+    const panelAlt = document.getElementById('panel-alt');
+
+    function activate(which) {
+      const isAi = which === 'ai';
+      tabAi.classList.toggle('active', isAi);
+      tabAi.setAttribute('aria-selected', String(isAi));
+      tabAlt.classList.toggle('active', !isAi);
+      tabAlt.setAttribute('aria-selected', String(!isAi));
+      panelAi.hidden = !isAi;
+      panelAlt.hidden = isAi;
+    }
+
+    tabAi.addEventListener('click', () => activate('ai'));
+    tabAlt.addEventListener('click', () => activate('alt'));
+  </script>
 </body>
 </html>
