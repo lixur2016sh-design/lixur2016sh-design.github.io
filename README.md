@@ -1,35 +1,21 @@
 
-# mYi介 的兴趣空间（GitHub Pages 初始化包）
+# 交钥匙首页（含标题/副标题/两页切换 + 联系我）
 
-零基础部署步骤（约 3 分钟）：
+你要求的网页效果已实现：
+- **标题**：mYi介 的兴趣空间
+- **副标题**：Ai · 五万英尺
+- **页面切换**：
+  - Tab「Ai」→ 通过 `<iframe>` 内嵌展示 `share_ai.html`（你之前的 Markdown 转网页成品）。
+  - Tab「五万英尺」→ 仅占位符文案，可后续替换为真实内容。
+- **联系我**：邮箱 `bruce.lee@zf.com`。
+- 已集成百度统计异步脚本，并限定仅在 `lixur2016sh-design.github.io` 下加载。
 
-## 1）创建仓库（用户主页形式，推荐）
-- 登录 GitHub，新建公开仓库，名称必须是：`lixur2016sh-design.github.io`
+## 如何上线
+1. 将 `index.html` 上传到你的 Pages 来源目录（根目录或 `docs/`）。
+2. 确保同目录下已有 `share_ai.html`（若没有，请上传我之前给你的交钥匙包中的 `share_ai.html`）。
+3. Commit 后等待 30–60 秒，访问站点首页即可看到效果。
 
-## 2）上传文件
-- 将此项目中的所有文件上传到仓库的根目录（index.html / styles.css / assets / README.md）。
+## 可选微调
+- 如需在「五万英尺」页展示真实内容，直接在 `index.html` 中替换对应占位符 `<section id="panel-alt">` 内的文案即可。
+- 若希望「Ai」页以同页内联展示而非 `<iframe>`，我可以再生成一个版本把 `share_ai.html` 的主体提取并内联到首页（但会失去独立地址）。
 
-## 3）启用 GitHub Pages
-- 进入仓库 **Settings → Pages**
-- **Build and deployment** 中，Source 选择 **Deploy from a branch**
-- Branch 选择主分支（如 `main`），文件夹路径选择 `/root`
-- 保存后等待 1–3 分钟，访问站点：`https://lixur2016sh-design.github.io`
-
-## 4）常用自定义
-- 替换 `assets/` 里的图片（头像、兴趣卡片、相册、cover）
-- 在 `index.html` 中更新社交链接（邮箱/微博/B站等）
-- 如需自定义域名：仓库根目录新增 `CNAME` 文件，内容写你的域名，如 `example.com`
-
-## 目录结构
-```
-index.html
-styles.css
-assets/
-  avatar.jpg
-  interest_photography.jpg
-  interest_music.jpg
-  interest_travel.jpg
-  interest_diy.jpg
-  gallery_1.jpg ... gallery_5.jpg
-  cover.jpg
-```
