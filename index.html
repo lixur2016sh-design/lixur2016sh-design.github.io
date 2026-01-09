@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>mYi介 的兴趣空间</title>
+  <meta name="description" content="非典型工科男 · Ai · 五万英尺" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:title" content="mYi介 的兴趣空间">
+  <meta property="og:description" content="非典型工科男 · Ai · 五万英尺">
+  <meta property="og:image" content="https://lixur2016sh-design.github.io/assets/cover.jpg">
+  <meta property="og:url" content="https://lixur2016sh-design.github.io/">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>mYi介 的兴趣空间</h1>
+      <p class="subtitle">Ai · 五万英尺</p>
+      <nav class="nav">
+        <a href="#about">关于我</a>
+        <a href="#interests">兴趣集</a>
+        <a href="#gallery">相册</a>
+        <a href="#posts">随笔</a>
+        <a href="#contact">联系我</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>关于我</h2>
+        <div class="about-wrap">
+          <img class="avatar" src="assets/avatar.jpg" alt="mYi介 头像" />
+          <div>
+            <p>你好，我是 <strong>mYi介</strong>，非典型工科男。这是我的兴趣空间，欢迎来逛。</p>
+            <ul class="tags">
+              <li>#摄影</li><li>#指弹吉他</li><li>#徒步旅行</li><li>#电子DIY</li>
+            </ul>
+            <div class="share">
+              <button id="copyLinkBtn">复制本站链接</button>
+              <a class="icon" href="#" aria-label="微博">微博</a>
+              <a class="icon" href="#" aria-label="微信">微信</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section alt">
+      <div class="container">
+        <h2>兴趣集</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="assets/interest_photography.jpg" alt="摄影" />
+            <h3>摄影</h3>
+            <p>城市人文与旅行风景，偏好 35mm 定焦的干净画面。</p>
+            <a class="btn" href="#">查看作品集</a>
+          </article>
+          <article class="card">
+            <img src="assets/interest_music.jpg" alt="音乐" />
+            <h3>音乐</h3>
+            <p>指弹吉他与 Lo-fi，偶尔分享练习片段和曲谱。</p>
+            <a class="btn" href="#">试听清单</a>
+          </article>
+          <article class="card">
+            <img src="assets/interest_travel.jpg" alt="旅行" />
+            <h3>旅行</h3>
+            <p>轻徒步与城市漫游，偏好低人流的自然步道。</p>
+            <a class="btn" href="#">路线与攻略</a>
+          </article>
+          <article class="card">
+            <img src="assets/interest_diy.jpg" alt="电子DIY" />
+            <h3>电子DIY</h3>
+            <p>简易合成器与树莓派小项目，记录踩坑与心得。</p>
+            <a class="btn" href="#">项目集锦</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>相册</h2>
+        <div class="masonry">
+          <img src="assets/gallery_1.jpg" alt="相册1" />
+          <img src="assets/gallery_2.jpg" alt="相册2" />
+          <img src="assets/gallery_3.jpg" alt="相册3" />
+          <img src="assets/gallery_4.jpg" alt="相册4" />
+          <img src="assets/gallery_5.jpg" alt="相册5" />
+        </div>
+      </div>
+    </section>
+
+    <section id="posts" class="section alt">
+      <div class="container">
+        <h2>随笔</h2>
+        <article class="post">
+          <h3>给 2025 的一张照片</h3>
+          <time datetime="2025-11-20">2025-11-20</time>
+          <p>把一次清晨的光留在这里。或许照片不止记录，更是提醒。</p>
+          <a class="btn" href="#">阅读全文</a>
+        </article>
+        <article class="post">
+          <h3>一把木吉他的夏天</h3>
+          <time datetime="2025-08-02">2025-08-02</time>
+          <p>每次指尖划过琴弦，总能听见一点不完美，但刚好是生活的质感。</p>
+          <a class="btn" href="#">阅读全文</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>联系我</h2>
+        <ul class="contact-list">
+          <li>邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></li>
+          <li>微博：<a href="#">@你的微博</a></li>
+          <li>B站：<a href="#">我的空间</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 mYi介 · 本页由静态文件构成，可自由托管与分享</small>
+    </div>
+  </footer>
+
+  <script>
+    const copyBtn = document.getElementById('copyLinkBtn');
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = '已复制链接 ✅';
+        setTimeout(() => copyBtn.textContent = '复制本站链接', 2000);
+      } catch (e) {
+        alert('复制失败，请手动复制地址栏链接');
+      }
+    });
+  </script>
+</body>
+</html>
