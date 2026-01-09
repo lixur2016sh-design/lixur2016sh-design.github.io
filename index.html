@@ -5,12 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>mYi介 的兴趣空间</title>
-  <meta name="description" content="Ai · 五万英尺 | mYi介 的兴趣空间">
+  <meta name="description" content="Ai · 五万英尺 | 思维导图主页">
   <meta name="color-scheme" content="dark light">
   <style>
     :root { --bg:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --link:#93c5fd; --border:#334155; --accent:#38bdf8; }
     * { box-sizing: border-box; }
-    html, body { height:100%; }
     body { margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
     .hero { padding:48px 16px 28px; border-bottom:1px solid var(--border); background:#0b1220; }
     .container { max-width:1100px; margin:0 auto; }
@@ -20,17 +19,19 @@
     nav.tabs button { background:#0b1220; color:var(--fg); border:1px solid var(--border); padding:8px 14px; border-radius:999px; cursor:pointer; transition:border-color .2s,color .2s; }
     nav.tabs button.active { border-color:var(--accent); color:var(--accent); }
     main { padding:22px 16px 40px; }
-    section { padding:16px 0; }
-    .panel { border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#0b1220; }
-    iframe { width:100%; min-height:900px; border:0; display:block; background:#0b1220; }
-    .placeholder { padding:24px; }
-    .contact { margin-top:18px; font-size:15px; color:var(--muted); }
+    .mm-wrap { background:#0b1220; border:1px solid var(--border); border-radius:12px; padding:12px; }
+    .row { display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; }
+    .col { flex:1 1 740px; min-width:300px; }
+    .side { flex:0 0 300px; min-width:280px; }
+    .card { background:#0b1220; border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+    .btn { display:inline-block; padding:8px 12px; border:1px solid var(--accent); color:#e0f2fe; border-radius:8px; text-decoration:none; }
     a { color:var(--link); text-decoration:none; }
     a:hover { text-decoration:underline; }
     footer { border-top:1px solid var(--border); padding:16px; text-align:center; color:var(--muted); }
+    .mermaid { margin:0 auto; }
   </style>
+  <!-- Baidu Tongji（异步）—仅在正式域名加载 -->
   <script>
-    // Baidu Tongji（异步）—仅在正式域名加载
     if (location.hostname === 'lixur2016sh-design.github.io') {
       var _hmt = _hmt || [];
       (function() {
@@ -40,6 +41,11 @@
         s.parentNode.insertBefore(hm, s);
       })();
     }
+  </script>
+  <!-- Mermaid v10（ESM）用于思维导图 -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
   </script>
 </head>
 <body>
@@ -55,37 +61,76 @@
   </header>
 
   <main class="container">
-    <!-- Panel: Ai（展示 share_ai.html 内容） -->
-    <section id="panel-ai" class="panel" role="tabpanel" aria-labelledby="tab-ai">
-      <iframe id="aiFrame" src="./share_ai.html" title="AI 分享（Markdown）"></iframe>
-    </section>
-
-    <!-- Panel: 五万英尺（占位符） -->
-    <section id="panel-alt" class="panel" role="tabpanel" aria-labelledby="tab-alt" hidden>
-      <div class="placeholder">
-        <h2 style="margin-top:0">五万英尺</h2>
-        <p>这里是一个占位符（Placeholder）。未来可以展示高层视角的内容，如愿景、路线图或年度主题。</p>
+    <!-- Ai mindmap -->
+    <section id="panel-ai" role="tabpanel" aria-labelledby="tab-ai">
+      <div class="row">
+        <div class="col mm-wrap">
+          <div class="mermaid">
+            mindmap
+              root((Ai))
+                游戏化准备
+                Rule
+                主体
+                  视野与订阅
+                  场景与工具
+                  知识管理与笔记
+                  提示工程与技巧
+                  未来已来
+                收尾
+                  谁会害怕AI
+                  Else
+                  亲临礼物
+          </div>
+        </div>
+        <aside class="side">
+          <div class="card">
+            <h3 style="margin:4px 0 10px;">进入全文</h3>
+            <p style="margin:0 0 10px; color:#94a3b8;">点击查看完整内容（含目录折叠、图片等）。</p>
+            <a class="btn" href="./share_ai.html">打开：AI 分享</a>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- 联系我 -->
-    <section class="contact">
-      联系我：<a href="mailto:bruce.lee@zf.com">bruce.lee@zf.com</a>
+    <!-- 五万英尺 mindmap（占位） -->
+    <section id="panel-alt" role="tabpanel" aria-labelledby="tab-alt" hidden>
+      <div class="row">
+        <div class="col mm-wrap">
+          <div class="mermaid">
+            mindmap
+              root((五万英尺))
+                愿景
+                主题/主线
+                  2026 路线图
+                  亮点里程碑
+                资源
+                  参考资料
+                  工具清单
+                反馈
+                  联系方式
+          </div>
+        </div>
+        <aside class="side">
+          <div class="card">
+            <h3 style="margin:4px 0 10px;">下一步</h3>
+            <p style="margin:0 0 10px; color:#94a3b8;">把你想放在“五万英尺”的条目发我，我会替换为真实节点并可点击跳转到新页面。</p>
+            <a class="btn" href="#">占位：五万英尺全文</a>
+          </div>
+        </aside>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2026 mYi介 · 由 GitHub Pages 托管
+    © 2026 mYi介 · 由 GitHub Pages 托管 · 联系我：<a href="mailto:bruce.lee@zf.com">bruce.lee@zf.com</a>
   </footer>
 
   <script>
-    // Tab 切换 & iframe 高度自适应（通过 postMessage 更稳）
+    // Tab 切换
     const tabAi = document.getElementById('tab-ai');
     const tabAlt = document.getElementById('tab-alt');
     const panelAi = document.getElementById('panel-ai');
     const panelAlt = document.getElementById('panel-alt');
-    const iframe = document.getElementById('aiFrame');
-
     function activate(which) {
       const isAi = which === 'ai';
       tabAi.classList.toggle('active', isAi);
@@ -95,14 +140,6 @@
       panelAi.hidden = !isAi;
       panelAlt.hidden = isAi;
     }
-
-    // 监听子页面发来的高度更新
-    window.addEventListener('message', (ev) => {
-      if (!ev.data || ev.data.type !== 'iframeHeight') return;
-      const h = Math.max(900, Number(ev.data.h || 0));
-      iframe.style.height = h + 'px';
-    });
-
     tabAi.addEventListener('click', () => activate('ai'));
     tabAlt.addEventListener('click', () => activate('alt'));
   </script>
